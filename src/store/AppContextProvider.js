@@ -71,8 +71,6 @@ const AppContextProvider = (props) => {
     if (hours >= 18 || hours < 6) setTimeOfDay("evening");
   }, [timeData.hours]);
 
-  console.log(timeData.hours, timeData.minutes, timeData.seconds, timeOfDay);
-
   return (
     <AppContext.Provider
       value={{

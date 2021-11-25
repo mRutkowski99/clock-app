@@ -8,6 +8,7 @@ export const StyledButton = styled.a`
   padding: 0.5rem 1rem;
   width: 12rem;
   cursor: pointer;
+  transition: all 0.2s;
 
   background-color: #fff;
   color: #000;
@@ -17,6 +18,10 @@ export const StyledButton = styled.a`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   .button__arrow {
     width: 3rem;

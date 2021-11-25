@@ -9,7 +9,7 @@ function App() {
 
   const {
     isLoading: timeIsLoading,
-    hasError: timeHasError,
+    error: timeHasError,
     getData: getTimeData,
   } = useFetch();
 

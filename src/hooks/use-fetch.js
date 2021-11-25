@@ -2,12 +2,12 @@ import { useState, useCallback } from "react";
 
 const useFetch = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [hasError, setHasError] = useState(null);
+  const [error, setError] = useState(null);
 
   const getData = useCallback(async (url, transformDataFn) => {
     try {
       setIsLoading(true);
-      setHasError(null);
+      setError(null);
 
       const response = await fetch(url);
 
@@ -18,7 +18,7 @@ const useFetch = () => {
       const data = await response.json();
       transformDataFn(data);
     } catch (error) {
-      setHasError(error);
+      setError(error);
     }
 
     setIsLoading(false);
@@ -26,7 +26,7 @@ const useFetch = () => {
 
   return {
     isLoading,
-    hasError,
+    error,
     getData,
   };
 };
