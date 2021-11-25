@@ -6,6 +6,8 @@ const AppContext = React.createContext({
   timeData: {},
   setTimeData: () => {},
   timeOfDay: "",
+  location: {},
+  setLocation: () => {},
 });
 
 export default AppContext;

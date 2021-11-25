@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import arrowUp from "../../assests/icon-arrow-up.svg";
 
 export const StyledButton = styled.a`
   border: none;

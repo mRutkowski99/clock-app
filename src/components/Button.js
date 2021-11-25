@@ -16,7 +16,7 @@ const Button = () => {
     <StyledButton onClick={btnClickHandler} showMore={appCtx.more}>
       {btnText}
       <span className="button__arrow">
-        <img src={arrowUp} />
+        <img src={arrowUp} alt="button arrow icon" />
       </span>
     </StyledButton>
   );

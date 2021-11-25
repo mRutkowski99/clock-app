@@ -5,6 +5,7 @@ const AppContextProvider = (props) => {
   const [showMore, setShowMore] = useState(false);
   const [timeData, setTimeData] = useState({});
   const [timeOfDay, setTimeOfDay] = useState("");
+  const [location, setLocation] = useState({});
 
   const toggleMoreHandler = () => {
     setShowMore((prev) => !prev);
@@ -73,6 +74,13 @@ const AppContextProvider = (props) => {
     if (hours >= 18 || hours < 6) setTimeOfDay("evening");
   }, [timeData.hours]);
 
+  const setLocationHandler = (data) => {
+    setLocation({
+      city: data.city,
+      country: data.country,
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -81,6 +89,8 @@ const AppContextProvider = (props) => {
         timeData: timeData,
         setTimeData: setTimeDataHandler,
         timeOfDay: timeOfDay,
+        location: location,
+        setLocation: setLocationHandler,
       }}
     >
       {props.children}

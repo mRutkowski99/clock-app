@@ -11,7 +11,7 @@ export const StyledTime = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    animation: from-top ease-out 0.3s;
+    animation: from-top ease-out 0.5s;
   }
 
   color: #fff;

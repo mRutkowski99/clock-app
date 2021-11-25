@@ -2,13 +2,10 @@ import { StyledTime } from "./styled/Time.styled";
 import sunIcon from "../assests/icon-sun.svg";
 import moonIcon from "../assests/icon-moon.svg";
 import Button from "./Button";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import AppContext from "../store/app-context";
-import useFetch from "../hooks/use-fetch";
 
-const Time = () => {
-  const [location, setLocation] = useState({});
-
+const Time = (props) => {
   const appCtx = useContext(AppContext);
 
   const hours = String(appCtx.timeData.hours).padStart(2, "0");
@@ -21,19 +18,7 @@ const Time = () => {
 
   const welcomeText = `Good ${appCtx.timeOfDay}`;
 
-  //Fetching location data
-  const { isLoading, error, getData } = useFetch();
-
-  const transformLocationData = (data) => {
-    setLocation({
-      city: data.city,
-      country: data.country,
-    });
-  };
-
-  useEffect(() => {
-    getData("http://ip-api.com/json/", transformLocationData);
-  }, []);
+  const { city, country } = appCtx.location;
 
   return (
     <StyledTime>
@@ -52,7 +37,7 @@ const Time = () => {
           {appCtx.timeData.month} {appCtx.timeData.day}
         </h3>
         <h3>
-          in {location.city}, {location.country}
+          in {city}, {country}
         </h3>
       </div>
       <Button />

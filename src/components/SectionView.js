@@ -4,7 +4,7 @@ import { StyledSectionView } from "./styled/SectionView.styled";
 import Time from "./Time";
 import Quote from "./Quote";
 
-const SectionView = () => {
+const SectionView = (props) => {
   const appCtx = useContext(AppContext);
 
   const nightBg = appCtx.timeOfDay === "evening";
