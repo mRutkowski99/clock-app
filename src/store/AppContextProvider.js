@@ -15,6 +15,8 @@ const AppContextProvider = (props) => {
       hours: data.hours,
       minutes: data.minutes,
       seconds: data.seconds,
+      day: data.day,
+      month: data.month,
       timezone: data.timezone,
       dayOfYear: data.dayOfYear,
       dayOfWeek: data.dayOfWeek,

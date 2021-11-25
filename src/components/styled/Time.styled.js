@@ -10,6 +10,8 @@ export const StyledTime = styled.div`
   & > div:first-child {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    animation: from-top ease-out 0.3s;
   }
 
   color: #fff;
@@ -24,6 +26,12 @@ export const StyledTime = styled.div`
 
   span {
     display: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    span {
+      display: inline;
+    }
   }
 
   img {

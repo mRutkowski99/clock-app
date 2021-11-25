@@ -31,7 +31,7 @@ export const StyledButton = styled.a`
     justify-content: center;
     align-items: center;
     transform: ${(props) => (props.showMore ? "rotate(0)" : "rotate(180deg)")};
-    transition: ease-out 0.2s;
+    transition: ease-out 0.5s;
   }
 
   img {

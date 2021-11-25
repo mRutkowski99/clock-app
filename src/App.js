@@ -7,6 +7,7 @@ import AppContext from "./store/app-context";
 function App() {
   const appCtx = useContext(AppContext);
 
+  // FETCHING TIME DATA
   const {
     isLoading: timeIsLoading,
     error: timeHasError,
@@ -20,6 +21,8 @@ function App() {
       hours: date.getHours(),
       minutes: date.getMinutes(),
       seconds: date.getSeconds(),
+      day: date.getDate(),
+      month: date.toLocaleString("en-us", { month: "long" }),
       timezone: data.timezone,
       dayOfYear: data.day_of_year,
       dayOfWeek: data.day_of_week,

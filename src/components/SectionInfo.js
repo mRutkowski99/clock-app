@@ -9,6 +9,11 @@ const SectionInfo = () => {
 
   const [isHidden, setIsHidden] = useState(true);
 
+  /*Manipulating DOM with DOM API from React component - not best practice
+  Need to change background color of body depening on actual time of day to prevent
+  displaying white block during hiding component*/
+  document.body.style = nightTheme ? "background: #222;" : "background: #ddd;";
+
   useEffect(() => {
     if (appCtx.more) {
       const timeout = setTimeout(() => {
