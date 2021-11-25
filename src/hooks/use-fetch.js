@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 const useFetch = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(null);
 
-  const getData = async (url, transformDataFn) => {
+  const getData = useCallback(async (url, transformDataFn) => {
     try {
       setIsLoading(true);
       setHasError(null);
@@ -22,7 +22,7 @@ const useFetch = () => {
     }
 
     setIsLoading(false);
-  };
+  }, []);
 
   return {
     isLoading,
@@ -30,3 +30,5 @@ const useFetch = () => {
     getData,
   };
 };
+
+export default useFetch;

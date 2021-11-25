@@ -1,20 +1,29 @@
 import styled from "styled-components";
 
 export const StyledTime = styled.div`
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  justify-self: start;
-  align-self: end;
-
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
   color: #fff;
 
   .welcome {
+    font-size: 2rem;
     display: flex;
     gap: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+
+  span {
+    display: none;
   }
 
   img {
@@ -22,11 +31,12 @@ export const StyledTime = styled.div`
   }
 
   h2 {
-    font-size: 15rem;
+    font-size: clamp(10rem, 20vw, 15rem);
     font-weight: 700;
   }
 
   h3 {
+    font-size: 2rem;
     font-weigth: 600;
     text-transform: uppercase;
   }
